@@ -1,5 +1,4 @@
 import memoize from 'lodash.memoize';
-import IntlMessageFormat from 'intl-messageformat';
 
 /* eslint-disable no-console */
 
@@ -71,12 +70,6 @@ function concatPath(locale, data, path, subpath) {
 
   memoizedI18nPartial.toString = function() {
     return getLangString(locale, data, _path);
-  }
-
-  memoizedI18nPartial.format = function(values) {
-    const str = getLangString(locale, data, _path);
-    const formatter = new IntlMessageFormat(str, locale);
-    return formatter.format(values);
   }
 
   Object.defineProperty(memoizedI18nPartial, 's', {
