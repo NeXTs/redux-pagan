@@ -25,7 +25,7 @@ function getLangString(locale, data, fullpath) {
           const keyPath = `${locale}:${fullpath.join('/')}`;
           if (!isEmpty(data) && !notFoundKeyWarned[keyPath]) {
             if (process.env.NODE_ENV !== 'production') {
-              console.log(`Redux-Pagan: key was not found at path: ${keyPath}`, 'color: #ff0000');
+              console.log(`%c Redux-Pagan: key was not found at path: ${keyPath}`, 'color: #FF8081');
             }
             notFoundKeyWarned[keyPath] = true;
           }
